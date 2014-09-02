@@ -1,0 +1,3 @@
+title=Redelitoral_app
+author=Mabel Calim Costa
+orientation=portrait

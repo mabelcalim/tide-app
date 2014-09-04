@@ -5,6 +5,7 @@
 
 Welcome to Tidal Gauge App's documentation!
 ===========================================
+
 .. image:: IMG_007.png
    :width: 500pt
 

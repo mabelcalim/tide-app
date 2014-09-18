@@ -1,4 +1,4 @@
-.. image:: Logo_Tam3_low.png
+.. image:: images/ Logo_Tam3_low.png
    :scale: 70%
 
 Tide Gauge Data 
@@ -10,7 +10,7 @@ city_:		São Sebastião - Brazil
 
 type_: 		semidiurnal 
 
-.. image:: fig_data.png
+.. image:: images/fig_data.png
    :width: 480px
    :align: center 
    :height: 800px 

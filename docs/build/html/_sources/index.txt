@@ -7,7 +7,8 @@ Welcome to Tidal Gauge App's documentation!
 ===========================================
 
 .. image:: IMG_007.png
-   :width: 500pt
+   :width: 200pt
+
 
 Tidal gauge app for monitoring S.Sebastiao station (SP -BRAZIL).
 A python tool for all kinds of mobile.

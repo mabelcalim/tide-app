@@ -1,4 +1,4 @@
-.. image:: /Users/usuario/git_repos/tide-app/kivy/images/Logo_Tam3_low.png
+.. image:: /kivy/images/Logo_Tam3_low.png
    :scale: 70%
 
 Tide Gauge Data 
@@ -10,7 +10,7 @@ city_:          São Sebastião - Brazil
 
 type_:          semidiurnal
 
-.. image:: /Users/usuario/git_repos/tide-app/kivy/images/fig_data.png
+.. image:: /kivy/images/fig_data.png
    :width: 480px
    :align: center 
    :height: 800px 

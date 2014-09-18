@@ -3,10 +3,11 @@ tide-app
 
 Tidal gauge app for monitoring S.Sebastiao station (SP -BRAZIL).
 A python tool for all kinds of mobile. 
-First test in Android!
+First test in Android! 
 
 ![ScreenShot](https://github.com/mabelcalim/tide-app/blob/master/kivy/images/android_view.jpg)
 
+![ScreenShot](https://github.com/mabelcalim/tide-app/blob/master/kivy/images/fig_data.png)
 
 Installation
 ============

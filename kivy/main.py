@@ -1,69 +1,81 @@
-'''
-Pictures demo
-=============
-
-This is a basic picture viewer, using the scatter widget.
-'''
-
-import kivy
-kivy.require('1.0.6')
-
-from glob import glob
-from random import randint
-from os.path import join, dirname
 from kivy.app import App
-from kivy.logger import Logger
-from kivy.uix.scatter import Scatter
-from kivy.properties import StringProperty
-# FIXME this shouldn't be necessary
-from kivy.core.window import Window
-#Buttom
-from kivy.uix.button import Button
-from kivy.uix.widget import Widget
-#screen
 from kivy.uix.screenmanager import ScreenManager, Screen
-# database connect
-from kivy.graphics import Rectangle
-from kivy.uix.boxlayout import BoxLayout
-from kivy.uix.label import Label
-import os.path
+from kivy.properties import NumericProperty
+from kivy.lang import Builder
+from kivy.clock import Clock
+
+Builder.load_string('''
+#:import random random.random
+#:import SlideTransition kivy.uix.screenmanager.SlideTransition
+#:import SwapTransition kivy.uix.screenmanager.SwapTransition
+#:import WipeTransition kivy.uix.screenmanager.WipeTransition
+#:import FadeTransition kivy.uix.screenmanager.FadeTransition
+#:import RiseInTransition kivy.uix.screenmanager.RiseInTransition
+#:import FallOutTransition kivy.uix.screenmanager.FallOutTransition
+#:import NoTransition kivy.uix.screenmanager.NoTransition
+
+<CustomScreen>:
+    hue: random()
+    canvas:
+        Rectangle:
+            size: self.size
+            source: 'android_view.jpg'
+    Button:
+        text: 'tide data'
+        size_hint: None, None
+        pos_hint: {'right': 1}
+        size: 150, 50
+        on_release: root.manager.current = root.manager.next()
+
+
+<Screen1>:
+    tab_pos: 'top'
+    size_hint: (1, 1)
+    pos_hint: {'right':1}
+    FloatLayout:
+        RstDocument:
+            id: default_content
+            source:('mydata.rst')
+   
+    Button:
+        text: 'refresh '
+        size_hint: None, None
+        pos_hint: {'top': 1, 'right':1}
+        size: 150, 50
+        on_press: app.start()
  
+    Button:
+        text: 'menu'
+        size_hint: None, None
+        size: 150, 50
+        on_release: root.manager.current = root.manager.previous()
+''')
 
-class Picture(Scatter):
-    '''Picture is the class that will show the image with a white border and a
-    shadow. They are nothing here because almost everything is inside the
-    picture.kv. Check the rule named <Picture> inside the file, and you'll see
-    how the Picture() is really constructed and used.
 
-    The source property will be the filename to show.
-    '''
+class CustomScreen(Screen):
+    hue = NumericProperty(0)
 
-    source = StringProperty(None)
-	
+class Screen1(Screen):
+    pass
 
-class PicturesApp(App):
+class ScreenManagerApp(App):
+    Clock.max_iteration = 70
+    def start(self):
+	 Clock.schedule_interval(lambda dt:self.database(),0.5)
+
+    def database(self):
+        import database2
+        return
+
     def build(self):
-        # the root is created in pictures.kv
-        root = self.root
-
-        # get any files into images directory
-	
-        curdir = dirname(__file__)
-        for filename in glob(join(curdir, 'images', '*')):
-            try:
-                # load the image
-                picture = Picture(source=filename, rotation=randint(-30,30))
-                # add to the main field
-                root.add_widget(picture)
-            except Exception as e:
-                Logger.exception('Pictures: Unable to load <%s>' % filename)
-    
-     
-    def on_pause(self):
-        return True
-
+        root = ScreenManager()
+        for x in range(1):
+            root.add_widget(CustomScreen(name='%s'%x))
+        if x ==0:
+            #video= VideoPlayer(source='softboy.avi', state='play') 
+            root.add_widget(Screen1())
+        return root
 
 if __name__ == '__main__':
-    PicturesApp().run()
-
+    ScreenManagerApp().run()
 

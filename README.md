@@ -7,7 +7,6 @@ First test in Android!
 
 ![ScreenShot](https://github.com/mabelcalim/tide-app/blob/master/kivy/images/android_view.jpg)
 
-![ScreenShot](https://github.com/mabelcalim/tide-app/blob/master/kivy/images/fig_data.png)
 
 Installation
 ============

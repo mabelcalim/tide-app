@@ -4,11 +4,11 @@
 Tide Gauge Data 
 ================
 
-station_:       23.81085 S 45.39841 W
+**station**       23.81085 S 45.39841 W
 
-city_:          São Sebastião - Brazil
+**city**          São Sebastião - Brazil
 
-type_:          semidiurnal
+**type**          semidiurnal
 
 .. image:: /kivy/images/fig_data.png
    :width: 480px
@@ -23,5 +23,4 @@ type_:          semidiurnal
         https://github.com/mabelcalim/tide-app
         
  
-Go to top_:
 

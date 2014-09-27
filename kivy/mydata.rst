@@ -10,7 +10,7 @@ city_:		São Sebastião - Brazil
 
 type_: 		semidiurnal 
 
-.. image:: images/fig_data.png
+.. image:: fig_data.png
    :width: 480px
    :align: center 
    :height: 800px 

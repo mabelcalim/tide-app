@@ -19,7 +19,7 @@ Builder.load_string('''
     canvas:
         Rectangle:
             size: self.size
-            source: 'android_view.jpg'
+            source: 'images/android_view.jpg'
     Button:
         text: 'tide data'
         size_hint: None, None
@@ -42,13 +42,16 @@ Builder.load_string('''
         size_hint: None, None
         pos_hint: {'top': 1, 'right':1}
         size: 150, 50
-        on_press: app.start()
+        on_press: app.database()
  
     Button:
         text: 'menu'
         size_hint: None, None
         size: 150, 50
         on_release: root.manager.current = root.manager.previous()
+
+    ImageButton:
+        source: 'https://raw.githubusercontent.com/mabelcalim/tide-app/master/kivy/images/fig_data.png' 
 ''')
 
 
@@ -59,12 +62,14 @@ class Screen1(Screen):
     pass
 
 class ScreenManagerApp(App):
-    Clock.max_iteration = 70
-    def start(self):
-	 Clock.schedule_interval(lambda dt:self.database(),0.5)
+    Clock.max_iteration = 50
+
+    def __init__(self, **kw):
+        super(ScreenManagerApp, self).__init__(**kw)
 
     def database(self):
         import database2
+        Clock.schedule_interval(lambda dt:self.database(),10)
         return
 
     def build(self):
@@ -75,6 +80,14 @@ class ScreenManagerApp(App):
             #video= VideoPlayer(source='softboy.avi', state='play') 
             root.add_widget(Screen1())
         return root
+
+    def on_pause(self):
+      # Here you can save data if needed
+        return True
+
+    def on_resume(self):
+      # Here you can check if any data needs replacing (usually nothing)
+        pass
 
 if __name__ == '__main__':
     ScreenManagerApp().run()

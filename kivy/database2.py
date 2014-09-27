@@ -6,6 +6,9 @@ import numpy as np
 import datetime
 from pylab import *
 import json
+from kivy.cache import Cache
+from kivy.storage.redisstore import RedisStore
+
 
 def database():
         """ open/read Redelitoral's database
@@ -62,5 +65,6 @@ def database():
         ax.set_xlabel('Date',fontsize=10)
         plt.title('Sea level for the last 3 days')  
         savefig('fig_data.png', bbox_inches='tight')
+        Cache.register('fig_data.png', limit=10, timeout=5) 
         return
 database()

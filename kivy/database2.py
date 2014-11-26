@@ -64,7 +64,7 @@ def database():
         ax.set_ylabel('Meters',fontsize=10)
         ax.set_xlabel('Date',fontsize=10)
         plt.title('Sea level for the last 3 days')  
-        savefig('fig_data.png', bbox_inches='tight')
-        Cache.register('fig_data.png', limit=10, timeout=5) 
+        savefig('fig_data.jpg', bbox_inches='tight')
+        #Cache.register('fig_data.jpg', limit=10, timeout=5) 
         return
 database()

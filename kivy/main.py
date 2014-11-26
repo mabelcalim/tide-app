@@ -1,3 +1,6 @@
+#!/usr/bin/kivy
+import kivy
+kivy.require('1.8.1')
 from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.properties import NumericProperty
@@ -6,13 +9,6 @@ from kivy.clock import Clock
 
 Builder.load_string('''
 #:import random random.random
-#:import SlideTransition kivy.uix.screenmanager.SlideTransition
-#:import SwapTransition kivy.uix.screenmanager.SwapTransition
-#:import WipeTransition kivy.uix.screenmanager.WipeTransition
-#:import FadeTransition kivy.uix.screenmanager.FadeTransition
-#:import RiseInTransition kivy.uix.screenmanager.RiseInTransition
-#:import FallOutTransition kivy.uix.screenmanager.FallOutTransition
-#:import NoTransition kivy.uix.screenmanager.NoTransition
 
 <CustomScreen>:
     hue: random()

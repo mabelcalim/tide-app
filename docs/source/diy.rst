@@ -17,6 +17,7 @@ Do it Yourself (DIY) your own kivy app!
 
 ::
 	/Users/usuario/dir
+
 # 3 init buildozer
 
 ::
@@ -39,7 +40,7 @@ Do it Yourself (DIY) your own kivy app!
 
 .. note::
 	to deactivate :
-	 dir usuario$ deactivate
+	dir usuario$ deactivate
 #7 run buildozer - see more in : https://github.com/kivy/buildozer
 
 ::
@@ -85,10 +86,12 @@ adb logcat and installation on android
 ::
 	platform-tools usuario$ ./adb start-serve
 	platform-tools usuario$ ./adb devices
+
 #3 adb install the apk on android for test
 
 ::
 	platform-tools usuario$ ./adb install /Users/usuario/dir/bin/<app-name>.apk
+
 #4 see error log
 
 ::

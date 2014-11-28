@@ -24,6 +24,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="Tidal Gauge App first preview on android -- app bond&#39;s version documentation" href="index.html" />
+    <link rel="next" title="Tide Gauge Data" href="data.html" />
     <link rel="prev" title="App info" href="intro.html" /> 
   </head>
   <body>
@@ -33,6 +34,9 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="data.html" title="Tide Gauge Data"
+             accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="intro.html" title="App info"
              accesskey="P">previous</a> |</li>
@@ -48,13 +52,107 @@
   <div class="section" id="diy">
 <h1>DIY<a class="headerlink" href="#diy" title="Permalink to this headline">¶</a></h1>
 <p>Do it Yourself (DIY) your own kivy app!</p>
-<p># 1  create your app - main.py</p>
-<p># 2  Download Kivy for Android Virtual Machine
-kivy.org/docs/guide/packaging-android-vm.html</p>
-<p>learn how to share files in Virtual Machine
-<a class="reference external" href="https://www.youtube.com/watch?v=TcrfrVNNGMU">https://www.youtube.com/watch?v=TcrfrVNNGMU</a></p>
-<p>#3 Create a package - android
-kivy.org/docs/guide/packaging-android.html#release-on-the-market</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This guide was developed on OSX 10.9.5, python 2.7, kivy 1.8.1</p>
+</div>
+<dl class="docutils">
+<dt>::</dt>
+<dd><dl class="first last docutils">
+<dt>some tips:1 brew install dpkg</dt>
+<dd><dl class="first last docutils">
+<dt>2 vi .bash_profile and comment this line</dt>
+<dd>#export ARCHFLAGS = &#8220;-arch x86&#8221;</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<p># 1 create your app - main.py</p>
+<p># 2 save your dir in your home:</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd>/Users/usuario/dir</dd>
+</dl>
+<p># 3 init buildozer</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd>dir usuario$ buildozer init</dd>
+</dl>
+<p># 4 modified the buildozer spec file</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd>dir usuario$ vi buildozer.spec</dd>
+</dl>
+<p># 5 create a virtualenv in your dir</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd>dir usuario$ virtualenv venv &#8211;distribute</dd>
+</dl>
+<p>#6 activate virtualenv</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd>dir usuario$ source /venv/bin/activate</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<dl class="last docutils">
+<dt>to deactivate :</dt>
+<dd>dir usuario$ deactivate</dd>
+</dl>
+</div>
+<p>#7 run buildozer - see more in : <a class="reference external" href="https://github.com/kivy/buildozer">https://github.com/kivy/buildozer</a></p>
+<dl class="docutils">
+<dt>::</dt>
+<dd>dir usuario$ buildozer android release</dd>
+</dl>
+<div class="section" id="signed-and-zipalign">
+<h2>Signed and Zipalign<a class="headerlink" href="#signed-and-zipalign" title="Permalink to this headline">¶</a></h2>
+<p>More infos to create a signature and to zip in : <a class="reference external" href="https://github.com/kivy/kivy/wiki/Creating-a-Release-APK">https://github.com/kivy/kivy/wiki/Creating-a-Release-APK</a></p>
+<p>#1 change the dir:</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd>dir usuario$ cd ~</dd>
+</dl>
+<p>#2 Obtain a keystore :</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd>keytool -genkey -v -keystore ./keystores/&lt;my-new-key&gt;.keystore -alias &lt;my-alias&gt; -keyalg RSA -keysize 2048 -validity 10000</dd>
+</dl>
+<p>#3 then signed as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre>jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore ./keystores/&lt;my-new-key&gt;.keystore ./&lt;my-project&gt;/bin/&lt;MyProject&gt;-&lt;version&gt;-release-unsigned.apk &lt;my-alias&gt;
+</pre></div>
+</div>
+<p>#4 zip the apk already signed:</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd>.buildozer/android/platform/android-sdk-21/build-tools/21.1.1/zipalign -v 4 ./&lt;my-project&gt;/bin/&lt;MyProject&gt;-&lt;version&gt;-release-unsigned.apk ./&lt;my-project&gt;/bin/&lt;MyProject&gt;.apk</dd>
+</dl>
+</div>
+<div class="section" id="adb-logcat-and-installation-on-android">
+<h2>adb logcat and installation on android<a class="headerlink" href="#adb-logcat-and-installation-on-android" title="Permalink to this headline">¶</a></h2>
+<p>#1 change to dir:</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd>cd /Users/usuario/.buildozer/android/platform/android-sdk-21/platform-tools</dd>
+</dl>
+<p>#2 install device</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd>platform-tools usuario$ ./adb start-serve
+platform-tools usuario$ ./adb devices</dd>
+</dl>
+<p>#3 adb install the apk on android for test</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd>platform-tools usuario$ ./adb install /Users/usuario/dir/bin/&lt;app-name&gt;.apk</dd>
+</dl>
+<p>#4 see error log</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd>platform-tools usuario$ ./adb logcat</dd>
+</dl>
+</div>
 </div>
 
 
@@ -63,9 +161,21 @@ kivy.org/docs/guide/packaging-android.html#release-on-the-market</p>
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">DIY</a><ul>
+<li><a class="reference internal" href="#signed-and-zipalign">Signed and Zipalign</a></li>
+<li><a class="reference internal" href="#adb-logcat-and-installation-on-android">adb logcat and installation on android</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
   <p class="topless"><a href="intro.html"
                         title="previous chapter">App info</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="data.html"
+                        title="next chapter">Tide Gauge Data</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/diy.txt"
@@ -94,6 +204,9 @@ kivy.org/docs/guide/packaging-android.html#release-on-the-market</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="data.html" title="Tide Gauge Data"
+             >next</a> |</li>
         <li class="right" >
           <a href="intro.html" title="App info"
              >previous</a> |</li>

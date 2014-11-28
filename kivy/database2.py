@@ -39,9 +39,9 @@ def database():
         #sea_mean =np.mean([data[e][3] for e in range(len(data))])
 	sea_mean = np.mean(sea_level)
         # date for axis
-        tlast = data[-1][2].strftime('%m/%d/%Y')
-        tmean = data[-min10/2][2].strftime('%m/%d/%Y')
-        t0 = data[-min10+1][2].strftime('%m/%d/%Y')
+        tlast = data[-1][2].strftime('%H:%I %m/%d/%Y')
+        tmean = data[-min10/2][2].strftime('%H:%I %m/%d/%Y')
+        t0 = data[-min10+1][2].strftime('%H:%I %m/%d/%Y')
         n0,nlast,nmean = 0,min10+1,min10/2
         # plots  
         plot_mean= [sea_mean]* (min10+1)
@@ -60,7 +60,7 @@ def database():
         plt.text(id_max-5,sea_level[id_max]+0.14, 'max',fontsize=10)
         plt.text(id_min-5,sea_level[id_min]-0.07, '%s'%sea_level[id_min],fontsize=10)
         plt.text(id_min-5,sea_level[id_min]-0.14, 'min',fontsize=10)
-        plt.text(min10-50,sea_mean-0.07, 'mean',fontsize=10)
+        plt.text(min10-50,sea_mean-0.1, 'mean',fontsize=10)
         # title and legend
         ax.set_ylabel('Meters',fontsize=10)
         ax.set_xlabel('Date',fontsize=10)

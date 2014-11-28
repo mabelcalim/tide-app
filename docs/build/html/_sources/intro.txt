@@ -2,7 +2,7 @@ App info
 ===============
 
 .. image:: images/icon.jpg
-   :width: 200pt
+   :scale: 70%
 
 A easy way to control the operation of tidal gauge and data visualization.
 This app accesses a tidal's database from the S.Sebastião station (Brazil).

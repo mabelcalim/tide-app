@@ -10,7 +10,7 @@ Tide Gauge Data
 
 **type**          semidiurnal
 
-.. image:: /Users/usuario/git_repos/tide-app/kivy/fig_data.png
+.. image:: /Users/usuario/git_repos/tide-app/kivy/fig_data.jpg
    :width: 480px
    :align: center 
    :height: 800px 

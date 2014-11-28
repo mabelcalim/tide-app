@@ -36,7 +36,8 @@ def database():
         #select only last 3 days data
         sea_level,sea_mean,min10 =[],[],432
         sea_level = [data[e][3] for e in range(data[-1][0]- min10+1,data[-1][0])]
-        sea_mean =np.mean([data[e][3] for e in range(len(data))])
+        #sea_mean =np.mean([data[e][3] for e in range(len(data))])
+	sea_mean = np.mean(sea_level)
         # date for axis
         tlast = data[-1][2].strftime('%m/%d/%Y')
         tmean = data[-min10/2][2].strftime('%m/%d/%Y')
@@ -64,7 +65,7 @@ def database():
         ax.set_ylabel('Meters',fontsize=10)
         ax.set_xlabel('Date',fontsize=10)
         plt.title('Sea level for the last 3 days')  
-        savefig('fig_data.jpg', bbox_inches='tight')
-        Cache.register('fig_data.jpg', limit=10, timeout=5) 
+        savefig('fig_data.png', bbox_inches='tight')
+        Cache.register('fig_data.png', limit=10, timeout=5) 
         return
 database()

@@ -1,0 +1,4 @@
+title=tide app
+author=Mabel Calim Costa
+orientation=portrait
+org=Redelitoral

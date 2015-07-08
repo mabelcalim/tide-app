@@ -1,4 +1,4 @@
-tide-app  ![ScreenShot](https://raw.githubusercontent.com/mabelcalim/tide-app/master/kivy/test8/icon.jpg)
+tide-app  ![ScreenShot](https://raw.githubusercontent.com/mabelcalim/tide-app/master/kivy/test8/icon.jpg = 0.5x)
 =========
 
 This app display a graph obtained from database connected to tidal station. 
@@ -11,7 +11,8 @@ The application also shows:
     * the average of all records from database
     * the minimum and maximum values that occurred these past three days.
 
-This application was developed in the context of RedeLitoral project, consisting of a large network of scientific collaboration (http://www.redelitoral.ita.br/index.php/inicial)
+This application was developed in the context of RedeLitoral project, consisting of a large network of scientific collaboration. 
+Visit the [Redelitoral website] (http://www.redelitoral.ita.br/index.php/inicial)
 
 
 ![ScreenShot](https://github.com/mabelcalim/tide-app/blob/master/kivy/images/android_view.jpg)

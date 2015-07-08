@@ -1,6 +1,5 @@
 ![ScreenShot](https://raw.githubusercontent.com/mabelcalim/tide-app/master/kivy/test8/icon.jpg) 
-tide-app  
-=========
+
 
 This app display a graph obtained from database connected to tidal station. 
 
@@ -22,8 +21,8 @@ Visit the [Redelitoral website] (http://www.redelitoral.ita.br/index.php/inicial
 Installation
 ============
 
-You can install it via  Google Play Store:
-https://play.google.com/store/apps/details?id=org.demo.test8
+You can install it via  [Google Play Store](https://play.google.com/store/apps/details?id=org.demo.test8)
+
 
 
 Requirements

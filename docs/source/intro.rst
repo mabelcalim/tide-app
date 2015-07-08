@@ -40,7 +40,7 @@ Visit the [github tide-app](https://github.com/mabelcalim/tide-app)
 
 .. note::
 	Many thanks:
-     		* to  my friends Gaucho (Luiz Irber) and GG (Gabriel Geraldo Marcondes) who encouraged me in creating this application
+     		* to  my friends Gaúcho (Luiz Irber) and GG (Gabriel Geraldo Marcondes) who encouraged me in creating this application
 
      		* To my colleagues and friends from RedeLitoral
 

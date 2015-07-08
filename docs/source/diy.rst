@@ -5,9 +5,11 @@ Do it Yourself (DIY) your own kivy app!
 
 .. note::
 	This guide was developed on OSX 10.9.5, python 2.7, kivy 1.8.1  
+
 	1. brew install dpkg
 	
 	2. vi .bash_profile and comment this line
+
 	#export ARCHFLAGS = "-arch x86"
 
 1. create your app - main.py

@@ -15,7 +15,6 @@ This application was developed in the context of RedeLitoral project, consisting
 Visit the [Redelitoral website] (http://www.redelitoral.ita.br/index.php/inicial)
 
 
-![ScreenShot](https://github.com/mabelcalim/tide-app/blob/master/kivy/images/android_view.jpg)
 
 
 Installation

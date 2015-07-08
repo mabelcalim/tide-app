@@ -10,7 +10,7 @@ Welcome to Tidal Gauge App's documentation!
    :width: 200pt
 
 
-::
+
 	Author :  Mabel Calim Costa
 
 	email  :  mabelcalim@gmail.com
@@ -18,8 +18,7 @@ Welcome to Tidal Gauge App's documentation!
 	code: python
 
 
- Contents 
-==================
+* Contents * 
 
 .. toctree::
    :maxdepth: 2

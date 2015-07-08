@@ -1,4 +1,4 @@
-.. image:: /Users/usuario/git_repos/tide-app/kivy/images/head1.jpg
+.. image:: images/head2.jpg
    :scale: 70%
 
 Tide Gauge Data 
@@ -10,7 +10,7 @@ Tide Gauge Data
 
 **type**          semidiurnal
 
-.. image:: /Users/usuario/git_repos/tide-app/kivy/fig_data.png
+.. image:: images/tide_data.png
    :width: 480px
    :align: center 
    :height: 800px 

@@ -10,18 +10,16 @@ Welcome to Tidal Gauge App's documentation!
    :width: 200pt
 
 
-Tidal gauge app for monitoring S.Sebastiao station (SP -BRAZIL).
-A python tool for all kinds of mobile.
+::
+	Author :  Mabel Calim Costa
+
+	email  :  mabelcalim@gmail.com
+
+	code: python
 
 
-Author :  Mabel Calim Costa
-
-email  :  mabelcalim@gmail.com
-
-code: python
-
-
-Contents:
+ Contents 
+==================
 
 .. toctree::
    :maxdepth: 2

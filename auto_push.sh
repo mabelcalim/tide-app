@@ -5,6 +5,7 @@ git pull -u
 #git status
 git add .
 git commit -am "auto commit and push everyday at 23h"
-git push origin master
 
-#exit 0
+git push origin master
+git push -f
+exit 0

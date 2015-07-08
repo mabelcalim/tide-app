@@ -1,4 +1,5 @@
-tide-app  ![ScreenShot](https://raw.githubusercontent.com/mabelcalim/tide-app/master/kivy/test8/icon.jpg = 0.5x)
+![ScreenShot](https://raw.githubusercontent.com/mabelcalim/tide-app/master/kivy/test8/icon.jpg) 
+tide-app  
 =========
 
 This app display a graph obtained from database connected to tidal station. 
@@ -31,3 +32,7 @@ Requirements
 **Android**
 
 You can run Kivy applications on Android, on (more or less) any device with OpenGL ES 2.0 (Android 2.2 minimum). 
+
+More info
+============
+Visit the [tide-app readthedocs](http://tide-app.readthedocs.org/en/latest/intro.html)

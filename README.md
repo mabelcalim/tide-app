@@ -1,9 +1,18 @@
-tide-app
+tide-app  ![ScreenShot](https://raw.githubusercontent.com/mabelcalim/tide-app/master/kivy/test8/icon.jpg)
 =========
 
-Tidal gauge app for monitoring S.Sebastiao station (SP -BRAZIL).
-A python tool for all kinds of mobile. 
-First test in Android! 
+This app display a graph obtained from database connected to tidal station. 
+
+This is automatically updated every data entered in database.
+
+For now, this app is monitoring S.Sebastiao station (BRAZIL) available for android.
+
+The application also shows:
+    * the average of all records from database
+    * the minimum and maximum values that occurred these past three days.
+
+This application was developed in the context of RedeLitoral project, consisting of a large network of scientific collaboration (http://www.redelitoral.ita.br/index.php/inicial)
+
 
 ![ScreenShot](https://github.com/mabelcalim/tide-app/blob/master/kivy/images/android_view.jpg)
 
@@ -11,9 +20,8 @@ First test in Android!
 Installation
 ============
 
-Soon will be available in Google Play Store
-is under construction.
-
+You can install it via  Google Play Store:
+https://play.google.com/store/apps/details?id=org.demo.test8
 
 
 Requirements
